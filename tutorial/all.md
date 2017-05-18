@@ -49,7 +49,7 @@
 [Omi框架](https://github.com/AlloyTeam/omi)目前最新版本为1.6.3，提供了渐进增强式的Web开发解决方案，内置完善的支持无限声明式嵌套的组件系统。概括起来包含下面优点和特性:
 
 * 良好的兼容性 - 兼容IE8及IE8以上版本
-* 超小的尺寸 - 7 kb (gzip) 虽然文件尺寸小
+* 超小的尺寸 - 7 kb (gzip) 
 * 面向未来的Web架构体系 - 未来DOM很快，而且越来来快! 其实现在DOM已经足够快了:)
 * 不使用虚拟DOM的问题是跨平台渲染更麻烦，Omi未来将提供`omi-canvas`进行跨平台渲染
 * ES6+ 和 ES5都可以 - Omi提供了ES6+和ES5的两种开发方案。你可以自有选择你喜爱的方式
@@ -63,12 +63,11 @@
 ![](http://images2015.cnblogs.com/blog/105416/201703/105416-20170329100346326-1473759472.png)
 
 * 完善丰富的插件和灵活的插件体系
-
-* [omi-router](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-router) : Omi专属的官方Router插件.
-* [omi-finger](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-finger) Omi的[AlloyFinger](https://github.com/AlloyTeam/AlloyFinger)插件，支持各种触摸事件和手势
-* [omi-transform](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-transform) Omi的[transformjs](https://alloyteam.github.io/AlloyTouch/transformjs/)插件，快速方便地设置DOM的CSS3 Transform属性
-* [omi-touch](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-touch) Omi的[AlloyTouch](https://github.com/AlloyTeam/AlloyTouch)插件，Omi项目的触摸运动解决方案（支持触摸滚动、旋转、翻页、选择等等）
-* [omi-jquery-date-picker](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-jquery-date-picker) Omi的时间选择插件，支持各种时间或者时间区域选择
+    * [omi-router](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-router) : Omi专属的官方Router插件.
+    * [omi-finger](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-finger) Omi的[AlloyFinger](https://github.com/AlloyTeam/AlloyFinger)插件，支持各种触摸事件和手势
+    * [omi-transform](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-transform) Omi的[transformjs](https://alloyteam.github.io/AlloyTouch/transformjs/)插件，快速方便地设置DOM的CSS3 Transform属性
+    * [omi-touch](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-touch) Omi的[AlloyTouch](https://github.com/AlloyTeam/AlloyTouch)插件，Omi项目的触摸运动解决方案（支持触摸滚动、旋转、翻页、选择等等）
+    * [omi-jquery-date-picker](https://github.com/AlloyTeam/omi/tree/master/plugins/omi-jquery-date-picker) Omi的时间选择插件，支持各种时间或者时间区域选择
 
 ## 安装Omi
 
@@ -1914,6 +1913,7 @@ result:
 ### o-filter
 
 > Omi.template.filter(String filterName, Function func(input, args...))
+
 > {{input|filte1:args1:args2...|filter2:args...}}
 
 example: 
@@ -1957,6 +1957,11 @@ data:
 { html : '<span style="color:red;">test o-html</span>' }
 ```
 
+result:
+
+``` html
+<div o-html="html"><span style="color:red;">test o-replace</span></div>
+```
 
 ### o-replace
 replace this node with html
@@ -1969,6 +1974,12 @@ data:
 
 ```js
 { html : '<span style="color:red;">test o-replace</span>' }
+```
+
+result:
+
+``` html
+<span style="color:red;">test o-replace</span>
 ```
 
 div will be replaced with given html
