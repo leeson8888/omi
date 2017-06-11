@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var _createClass = function () {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+        };
+    }();
+
+    console.log(_createClass);
+
+    //_createClass 创建对象的多个属性
+    //_createClass (Constructor, protoProps, staticProps)
+    // 如果两个参数,在原型上创建, 如果三个参数,则在原型和构造函数(实例)上创建
+    // 例如:
+    
+    function Box() {
+        
+    }
+
+    function toArr(obj) {
+        let arr = []
+        for (let key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                arr.push({key: key, value: obj[key]})
+            }
+        }
+        return arr
+    }
+
+    //props: 数组, 由 toArr 将obj 转换后的数组
+    function defineProperties(target, props) {
+
+        for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+        }
+        return target;
+    }
+
+
+
+    var propsObj ={
+        "keys111":"vals111",
+        "keys222":"vals222"
+    };
+    console.log(JSON.stringify(toArr(propsObj)));
+    //[{"key":"keys111","value":"vals111"},{"key":"keys222","value":"vals222"}]
+    var protoProps = toArr(propsObj);
+
+    //    var obj = defineProperties(Box,protoProps);
+    //    console.log(obj);
+   //     {keys111: "vals111", keys222: "vals222"}
+
+    console.log("---------构造函数 的 原型 上 创建 对象属性 ----------")
+    var  BoxCon1 = _createClass(Box,protoProps);
+    console.log(BoxCon1.prototype);
+
+    var box = new BoxCon1();
+
+    console.log(box.keys111);
+    console.log(box.keys222);
+
+    console.log("---------构造函数 上 创建 对象属性 ----------")
+    var  BoxCon2 = _createClass(Box,protoProps,protoProps);
+    console.log(BoxCon2.keys111);
+    console.log(BoxCon2.keys222);
+
+
+</script>
+</body>
+</html>

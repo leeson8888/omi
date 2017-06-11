@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function _possibleConstructorReturn(self, call) {
+        if (!self) {
+            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        }
+        return call && (typeof call === "object" || typeof call === "function") ? call : self;
+    }
+
+    function Obj() {
+
+    }
+    var obj =222;
+
+    var Obj1=111;
+    var ret =  _possibleConstructorReturn(false,Obj1);
+
+    console.log(ret);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+        console.log("ok-------------");
+    }
+
+    // 确保 instance 是 Constructor 的实例
+
+    function  Box() {
+
+    }
+    var box = new Box();
+
+    _classCallCheck(box,Box)
+
+    /*
+    var  Obj = {};
+    var obj = new Obj();
+    _classCallCheck(obj, Obj);
+    // TypeError: Obj is not a constructor
+    */
+
+    /*
+    var obj  = new Object();
+    _classCallCheck(obj, Object);
+    */
+
+</script>
+</body>
+</html>
